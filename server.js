@@ -7,10 +7,6 @@ import express from "express"
 const app = express();
 const args = minimist(process.argv.slice(2));
 
-var sides = 6;
-var dice = 2;
-var rolls = 1;
-
 app.use(express.urlencoded({extended: true}));
 
 app.get('/app/', (req, res) => {
@@ -19,20 +15,12 @@ app.get('/app/', (req, res) => {
 });
 
 app.get('/app/roll/', (req, res) => {
-    sides = parseInt(req.params.sides);
-    dice = parseInt(req.params.dice);
-    rolls = parseInt(req.params.rolls);
-    res.send(roll(sides, dice, rolls));
-    res.end();
+    res.send(roll(6, 2, 1));
 });
 
-/*
 app.get('/app/roll/', (req, res) => {
     res.send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)));
-    res.end();
 });
-
- */
 
 app.get('/app/roll/:sides/', (req, res) => {
     res.send(roll(parseInt(req.params.sides), 2, 1));
