@@ -14,7 +14,7 @@ app.get('/app/', (req, res) => {
     res.end();
 });
 
-app.get('/app/roll/', (req, res) => {
+app.get('/app.post', (req, res) => {
     var sides = 6;
     var dice = 2;
     var rolls = 1;
