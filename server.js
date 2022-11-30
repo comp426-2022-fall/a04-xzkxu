@@ -18,9 +18,9 @@ app.get('/app/roll/', (req, res) => {
     var sides = 6;
     var dice = 2;
     var rolls = 1;
-    if(req.params.sides) {sides = req.params.sides;}
-    if(req.params.dice) {sides = req.params.dice;}
-    if(req.params.sides) {sides = req.params.sides;}
+    if(req.body.sides) {sides = req.body.sides;}
+    if(req.body.dice) {sides = req.body.dice;}
+    if(req.body.sides) {sides = req.body.sides;}
     res.send(roll(sides, dice, sides));
 });
 
